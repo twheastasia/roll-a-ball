@@ -6,8 +6,8 @@ public class moveCamera : MonoBehaviour {
 
 	public int speed = 6;
 	public Transform bullet;
-	private int count = 0;//the counts of bullets
-
+	public int count = 0;//the counts of bullets
+	public static int shootTargetCounts = 0;
 	// Use this for initialization
 	void Start () {
 	
@@ -24,7 +24,7 @@ public class moveCamera : MonoBehaviour {
 		if (Input.GetButtonDown("Fire1")) {
 			Transform tf = (Transform)Instantiate(bullet, transform.position, transform.rotation);
 			Vector3 fwd = transform.TransformDirection (Vector3.forward);
-			tf.rigidbody.AddForce(fwd * 288);
+			tf.rigidbody.AddForce(fwd * 1000);
 
 			count++;
 			//gameObject.transform.Find("count").GetComponent(System.GUIText).guiText = "count: " + count;
